@@ -100,7 +100,7 @@ body {
     position: relative;
     height: 500px;
     width: 1920px;
-    background-image: url(price.jpg);
+    background-image: url(photo/price.jpg);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover; 
