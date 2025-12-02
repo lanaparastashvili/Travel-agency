@@ -190,52 +190,52 @@ body {
 }
 
 .container {
-            display: grid;
-            grid-template-columns: 250px 1fr;
-            gap: 30px;
-            max-width: 1400px;
-            margin: 0 auto;
-            margin-top:150px ;
-            margin-left: 215px;
-        }
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+    margin-top:150px ;
+    margin-left: 215px;
+}
 
-        .sidebar {
-            background: white;
-            padding: 25px;
-            border-radius: 8px;
-            height: fit-content;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
+.sidebar {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    height: fit-content;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
 
-        .filter-group {
-            margin-bottom: 25px;
-        }
+.filter-group {
+    margin-bottom: 25px;
+}
 
-        .filter-group h3 {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 12px;
-            color: #333;
-        }
+.filter-group h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #333;
+}
 
-        .filter-group label {
-            display: block;
-            font-size: 14px;
-            margin-bottom: 10px;
-            color: #666;
-            cursor: pointer;
-        }
+.filter-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #666;
+    cursor: pointer;
+}
 
-        .filter-group input[type="checkbox"],
-        .filter-group input[type="radio"] {
-            margin-right: 8px;
-            cursor: pointer;
-        }
+.filter-group input[type="checkbox"],
+.filter-group input[type="radio"] {
+    margin-right: 8px;
+    cursor: pointer;
+}
 
-        .filter-group input[type="date"] {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 14px;
-        }
+.filter-group input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
