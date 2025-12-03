@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
+
     <nav class="navbar">
         <div class="nav-contect">
             <div class="logo">
@@ -33,29 +34,291 @@
         <h1 class="hero-title">Our packages</h1>
     </div>
 </section>
+<div class="main-wrapper">
+    <div class="container2">
 
-<div class="container">
-    <aside class="asaid">
-        <div class="filter-group">
-            <h3>Select Your Destination:</h3>
-            <label><input type="checkbox">All Destination</label>
+        <form id="form">
+            <h2>Select your destination</h2>
+            <select id="destination">
+                <option>All Destinations</option>
+            </select>
+
+            <h2>Select your date</h2>
+            <input type="date" id="date">
+
+            <h2>Typologies</h2>
+            <div class="checkbox-group">
+                <div class="checkbox-item">
+                    <input type="checkbox" id="sports">
+                    <label for="sports">Sports Activities</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="family">
+                    <label for="family">Family-Friendly</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="heritage">
+                    <label for="heritage">Heritage Tours</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="road">
+                    <label for="road">Road Trips</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="budget">
+                    <label for="budget">Budget Travel</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="culinary">
+                    <label for="culinary">Culinary Tourism</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="eco">
+                    <label for="eco">Eco-tourism</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="adventure">
+                    <label for="adventure">Adventure Travel</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="beach">
+                    <label for="beach">Beach Holidays</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="cultural">
+                    <label for="cultural">Cultural Tours</label>
+                </div>
+            </div>
+
+            <h2>Max Price</h2>
+            <input type="range" id="price" min="0" max="5000" value="5000" step="100">
+            <div class="price-value">$ <span id="priceDisplay">5000</span></div>
+
+            <div class="promo-check">
+                <input type="checkbox" id="promo">
+                <label for="promo">See only promotions</label>
+            </div>
+
+            <h2>Durations</h2>
+            <div class="checkbox-group">
+                <div class="checkbox-item">
+                    <input type="checkbox" id="week">
+                    <label for="week">1 Week</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="tendays">
+                    <label for="tendays">10 Days</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="fivedays">
+                    <label for="fivedays">15 Days</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="fifteendays">
+                    <label for="fifteendays">5 Days</label>
+                </div>
+            </div>
+
+            <h2>Difficulty</h2>
+            <div class="checkbox-group">
+                <div class="checkbox-item">
+                    <input type="checkbox" id="challenging">
+                    <label for="challenging">Challenging</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="difficult">
+                    <label for="difficult">Difficult</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="easy">
+                    <label for="easy">Easy</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="medium">
+                    <label for="medium">Medium</label>
+                </div>
+            </div>
+
+            <h2>Min Age</h2>
+            <div class="checkbox-group">
+                <div class="checkbox-item">
+                    <input type="checkbox" id="age0">
+                    <label for="age0">0 </label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="age5">
+                    <label for="age5">16</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="age16">
+                    <label for="age16">18 </label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="age18">
+                    <label for="age18">5 </label>
+                </div>
+              
+            </div>
+
+        </form>
+    </div>
+
+<div class="container3">
+        <div class="main-content">
+            <div class="card">
+                <img src="photo/o2.jpg" alt="" style="width: 409.95px; height: 273.3px;">
+                <div class="card-content">
+                    <div class="card-header">
+                        <div class="duration">
+                            <div class="duration-dot"></div>
+                            <span>1 Week</span>
+                        </div>
+                        <div class="card-icons">
+                            <button class="icon-btn">📍</button>
+                            <button class="icon-btn">❤️</button>
+                        </div>
+                    </div>
+                    <h2 class="card-title">Chiang Mai</h2>
+                    <p class="card-location">📍 Thailand</p>
+                    <p class="card-description">Visit the temples and the Chiang Mai Night Bazaar, a huge huge market located on Chiang Khm Road.</p>
+                    <div class="card-footer">
+                        <button class="btn">Details</button>
+                        <div class="price-section">
+                            <div class="price-label">From</div>
+                            <div class="price">$ 490</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+           
+            <div class="card">
+                <img src="photo/o3.jpg" alt="" style="width: 409.95px; height: 273.3px;">
+                    <div class="sale-badge sale2">SALE</div>
+                
+                <div class="card-content">
+                    <div class="card-header">
+                        <div class="duration">
+                            <div class="duration-dot sale2"></div>
+                            <span>5 Days</span>
+                        </div>
+                        <div class="card-icons">
+                            <button class="icon-btn">📍</button>
+                            <button class="icon-btn">❤️</button>
+                        </div>
+                    </div>
+                    <h2 class="card-title">Chao Phraya</h2>
+                    <p class="card-location">📍 Thailand</p>
+                    <p class="card-description">Boat tour in the capital of Thailand, Bangkok, to see the beautiful palaces and monuments from the water.</p>
+                    <div class="card-footer">
+                        <button class="btn">Details</button>
+                        <div class="price-section">
+                            <div class="price-label">From</div>
+                            <div class="price">$ 98 <span class="price-original">$ 134</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+           
+            <div class="card">
+                <img src="photo/o4.jpg" alt="" style="width: 409.95px; height: 273.3px;">
+                    <div class="sale-badge">SALE</div>
+                
+                <div class="card-content">
+                    <div class="card-header">
+                        <div class="duration">
+                            <div class="duration-dot purple"></div>
+                            <span>10 Days</span>
+                        </div>
+                        <div class="card-icons">
+                            <button class="icon-btn">📍</button>
+                            <button class="icon-btn">❤️</button>
+                        </div>
+                    </div>
+                    <h2 class="card-title">Bangkok</h2>
+                    <p class="card-location">📍 Thailand</p>
+                    <p class="card-description">Marvelous culinary and cultural trip to the Thai capital with its wonderful monuments and Buddha statues.</p>
+                    <div class="card-footer">
+                        <button class="btn purple">Details</button>
+                        <div class="price-section">
+                            <div class="price-label">From</div>
+                            <div class="price">$ 1000 <span class="price-original">$ 1023</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+           
+            <div class="card">
+                <img src="photo/o5.jpg" alt="" style="width: 409.95px; height: 273.3px;">
+                    <div class="sale-badge">SALE</div>
+                
+                <div class="card-content">
+                    <div class="card-header">
+                        <div class="duration">
+                            <div class="duration-dot red"></div>
+                            <span>15 Days</span>
+                        </div>
+                        <div class="card-icons">
+                            <button class="icon-btn">📍</button>
+                            <button class="icon-btn">❤️</button>
+                        </div>
+                    </div>
+                    <h2 class="card-title">Nara</h2>
+                    <p class="card-location">📍 Japan</p>
+                    <p class="card-description">Discover the incredible landmarks such as the Todai-ji Temple and its famous Great Buddha.</p>
+                    <div class="card-footer">
+                        <button class="btn red">Details</button>
+                        <div class="price-section">
+                            <div class="price-label">From</div>
+                            <div class="price">$ 890 <span class="price-original">$ 989</span></div>
+                        </div>
+                    </div>
+                </div>
+            </card>
         </div>
 
-        <div class="filter-group">
-            <h3>select your date:</h3>
-            <input type="">
+    </div>
+
+         <div class="pagination">
+            <button class="active">1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
         </div>
 
-        <div class="filter-group">
-            <h3>Typologies</h3>
-            <label ><input type="checkbox">sport activities</label>
-            <label ><input type="checkbox">heritage tours</label>
-            <label ><input type="checkbox">budget travel</label>
-            <label ><input type="checkbox">eco-tourism</label>
-            <label ><input type="checkbox">beach holiday</label>
-        </div>
-    </aside>
 </div>
+
+
+</div>
+ <div class="footer">
+        <div class="footer-content">
+            <div class="footer-box">
+                <h3>Travel beyond your <br> imagination, with our <br> Travel Agency!</h3>
+            </div>
+            <div class="footer-box">
+                <h4>Address</h4>
+                <p>1080 Brickell Ave</p>
+                <p>Miami - Florida</p>
+                <p>U.S. of America</p>
+                <img src="" alt="">
+                <img src="" alt="">
+                <img src="" alt="">
+            </div>
+            <div class="footer-box">
+                <h4>Contact</h4>
+                <br>
+                <button class="email-btn">info@travel.com</button>
+                <br>
+                <br>
+                <p><b>+ 01 493 593 284</b></p>
+
+            </div>
+        </div>
+    </div>
 
     
 </body>
