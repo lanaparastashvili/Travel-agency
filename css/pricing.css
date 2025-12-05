@@ -111,7 +111,7 @@ body {
 }
 
 .nav-link .colon {
-    color: #1BBC9B;       
+    color: #1BBC9B;
     font-weight: bold;
 }
 
@@ -124,22 +124,23 @@ body {
     display: flex;
     gap: 15px;
 }
-.btn-menu{
+
+.btn-menu {
     position: relative;
     top: 5px;
     left: 1.25px;
     width: 17.8px;
     height: 20px;
-    background-image: url(photo/menu\ \(1\).png);
+    background-image: url("../assets/common/menu.png");
     background-size: cover;
     display: inline-block;
     border: none;
-    
-    
+
+
 }
 
 .btn-login {
-    
+
     background: #10b981;
     color: white;
     border: none;
@@ -155,6 +156,7 @@ body {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
 }
+
 .hero {
     position: relative;
     height: 500px;
@@ -187,6 +189,7 @@ body {
     font-weight: 700;
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 }
+
 .pricing-section {
     padding: 80px 0;
     background: white;
@@ -235,8 +238,9 @@ body {
     height: 778.5px;
     margin-top: 60px;
 }
+
 .pricing-cards,
-.pricing-cards3{
+.pricing-cards3 {
     background-color: #F2F2F2;
 }
 
@@ -247,12 +251,12 @@ body {
     height: 763.5px;
     left: 15px;
     border-radius: 15px;
-    
+
 }
 
 .pricing-card2 {
     background-color: #434A54;
-    
+
 }
 
 .card-img img,
@@ -261,7 +265,7 @@ body {
     width: 419.98px;
     height: 300px;
     border-top-left-radius: 15px;
-    border-top-right-radius: 15px;  
+    border-top-right-radius: 15px;
 }
 
 .card-content,
@@ -301,13 +305,14 @@ body {
     line-height: 45.5px;
     color: #000000;
     text-align: center;
-    
+
 }
 
 .price2 {
     color: #FFFFFF;
 }
-.price3{
+
+.price3 {
     color: #000000;
 }
 
@@ -318,7 +323,7 @@ body {
     font-size: 18px;
     font-weight: 700;
     line-height: 45.5px;
-    
+
 }
 
 .price-period2 {
@@ -343,7 +348,7 @@ body {
 .card-fe,
 .card-fe2,
 .card-fe3 {
-    
+
     text-align: center;
     line-height: 35px;
     list-style: none;
@@ -361,16 +366,16 @@ body {
     position: relative;
     bottom: 30px;
     right: 20px;
-    width:419.98px ;
+    width: 419.98px;
     height: 44px;
     margin-top: 45px;
-    border-bottom-right-radius:15px ;
-    border-bottom-left-radius:15px ;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
     background-color: #1BBC9B;
     color: #FFFFFF;
     border: none;
-    
-    
+
+
 }
 
 .bt-card:hover,
@@ -380,42 +385,47 @@ body {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
 }
-.one{
+
+.one {
     position: absolute;
     width: 111.91px;
     height: 34px;
     top: 1026px;
     left: 1610.09px;
     border-radius: 5px;
-    background-color:#14B9D5 ;
+    background-color: #14B9D5;
     color: #F2F2F2;
     border: none;
     font-style: Bold;
 }
-.two{
+
+.two {
     position: absolute;
     width: 160.77px;
     height: 34px;
     top: 1026px;
-    left:1740.09px;
-    background-color:#1BBC9B ;
+    left: 1740.09px;
+    background-color: #1BBC9B;
     color: #F2F2F2;
     font-style: Bold;
     border-radius: 5px;
     border: none;
-    
+
 }
-.one:hover{
+
+.one:hover {
     background: #0e8da4;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
 }
-.two:hover{
+
+.two:hover {
     background: #18a287;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
-    
+
 }
+
 .container1 {
     position: relative;
     width: 100%;
@@ -432,7 +442,7 @@ body {
     display: flex;
     align-items: flex-start;
     gap: 80px;
-    background:#F2F2F2
+    background: #F2F2F2
 }
 
 .img-block {
@@ -475,8 +485,8 @@ body {
     font-weight: 700;
     font-style: Bold;
     font-size: 50px;
-    
-    
+
+
 }
 
 .para h1 span {
@@ -488,28 +498,30 @@ body {
     font-style: Bold;
     font-size: 50px;
     z-index: 1;
-    
+
 }
-.empty{
+
+.empty {
     position: absolute;
     top: 230px;
     left: 1275px;
     width: 60px;
     height: 55px;
     background-color: #25c7a6;
-    
-    
+
+
 }
-.empty2{
+
+.empty2 {
     position: absolute;
     top: 230px;
     left: 1435px;
     width: 60px;
     height: 55px;
     background-color: #25c7a6;
-    
-    
-    
+
+
+
 }
 
 .price-compare {
@@ -517,7 +529,7 @@ body {
     align-items: center;
     gap: 15px;
     margin-bottom: 25px;
-    
+
 }
 
 .old-price {
@@ -539,7 +551,7 @@ body {
 }
 
 .description {
-    
+
     padding: 20px;
     border-radius: 10px;
     line-height: 1.6;
@@ -560,7 +572,7 @@ body {
     align-items: center;
     gap: 15px;
     margin-top: 20px;
-    
+
 }
 
 .agent img {
@@ -590,14 +602,16 @@ body {
     margin: 40px auto 0;
     padding: 40px;
     background: white;
-    
+
 }
-.tour-item{
+
+.tour-item {
     position: absolute;
     width: 675px;
     height: 799px;
 }
-.tourit{
+
+.tourit {
     font-weight: 500;
     font-style: italic;
     color: #1BBC9B;
@@ -606,7 +620,8 @@ body {
     text-align: left;
     font-family: 'Times New Roman', Times, serif;
 }
-.tourit1{
+
+.tourit1 {
     margin-top: 50px;
     font-weight: 700;
     font-style: Bold;
@@ -616,7 +631,7 @@ body {
     text-align: left;
 }
 
-.tour-btn{
+.tour-btn {
     margin-right: 720px;
     border: none;
     margin-top: 40px;
@@ -627,46 +642,51 @@ body {
     color: white;
     background-color: #1BBC9B;
 }
+
 .tour-btn:hover {
     background: #00f4a7;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
 }
-.tour-item1{
+
+.tour-item1 {
     position: absolute;
     width: 675px;
     height: 799px;
-    left:675px;
+    left: 675px;
 }
-.touriti1{
+
+.touriti1 {
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-    color: 
-    #6E6E6E;
+    color:
+        #6E6E6E;
     text-align: left;
     margin-top: 60px;
 }
-.touriti2{
-    
+
+.touriti2 {
+
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
     color: #6E6E6E;
     text-align: left;
 }
-.tour-menu{
+
+.tour-menu {
     position: absolute;
     width: 625px;
     height: 355px;
     text-align: left;
-    
+
 }
 
 .trips-left h3 {
     color: #1abc9c;
     font-size: 14px;
-    
+
 }
 
 .trips-left h2 {
@@ -697,16 +717,17 @@ body {
     font-weight: bold;
     text-align: left;
 }
+
 .footer {
     margin-top: 230px;
     color: white;
     padding: 130px;
-    background-image:linear-gradient(rgba(20, 19, 19, 0.6), rgba(20,19,19,0.6)), url("photo/6p.jpg");
-    background-size: cover;   
-    background-position: center; 
+    background-image: linear-gradient(rgba(20, 19, 19, 0.6), rgba(20, 19, 19, 0.6)), url("../assets/pricing/6p.jpg");
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     opacity: 50px;
-}    
+}
 
 .footer-content {
     max-width: 1200px;
@@ -722,7 +743,8 @@ body {
     line-height: 60px;
     margin-bottom: 15px;
 }
-.footer-box h4{
+
+.footer-box h4 {
     font-weight: 700;
     font-style: Bold;
     font-size: 20px;
@@ -735,12 +757,12 @@ body {
     font-weight: 500;
     font-size: 16px;
     line-height: 40px;
-    
+
     color: #FFFFFF;
 }
 
-.email-btn{
-    
+.email-btn {
+
     width: 181.52px;
     height: 44px;
     top: 170px;
@@ -749,14 +771,15 @@ body {
     background-color: #1BBC9B;
     color: #FFFFFF;
     border: none;
-    
+
 }
-.email-btn:hover{
+
+.email-btn:hover {
     background: #18a287;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
-    
-    
+
+
 }
 
 
