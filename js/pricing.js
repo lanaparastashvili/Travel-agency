@@ -33,7 +33,15 @@ document.addEventListener<'DOMContentLoaded', function () {
     var searchBtn = document.querySelector('.btn-login');
     var emailBtn = document.querySelector('.email-btn');
 
+if (searchButton) {
+        searchButton.addEventListener('click', function () {
+            var searchTerm = prompt('Search for a product:');
 
+            if (searchTerm) {
+                searchProducts(searchTerm);
+            }
+        });
+    }
   
     cardButtons.forEach(function (btn) {
         btn.addEventListener('click', handleCardClick);
@@ -72,7 +80,7 @@ document.addEventListener<'DOMContentLoaded', function () {
             var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
             if (userEmail && emailPattern.test(userEmail)) {
-                // 17. LOCALSTORAGE - Save email
+               
                 localStorage.setItem('userEmail', userEmail);
                 alert('Email saved: ' + userEmail);
             } else if (userEmail) {
