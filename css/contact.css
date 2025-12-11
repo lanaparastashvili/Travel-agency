@@ -156,7 +156,8 @@ body {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
 }
-
+@media (max-width: 768px) {
+    .nav-menu { display: none; }}
 .hero {
     position: relative;
     height: 500px;
@@ -633,4 +634,156 @@ body {
     box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
 
 
+}
+@media (max-width: 1400px) {
+    .navbar {
+        width: 100%;
+    }
+    
+    .conteineri1 {
+        width: calc(100% - 40px);
+        left: 20px;
+        position: relative;
+    }
+    
+    .conteineri2 {
+        width: calc(100% - 40px);
+        left: 20px;
+        position: relative;
+    }
+    
+    .one, .two {
+        position: relative;
+        top: auto;
+        left: auto;
+        margin: 10px 5px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .navbar {
+        width: 100%;
+        padding: 15px 20px;
+    }
+    
+    .nav-menu {
+        gap: 20px;
+    }
+    
+    .conteineri1 {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        width: 100%;
+        left: 0;
+        position: relative;
+        top: auto;
+    }
+    
+    .conc1, .conc2, .conc3 {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        position: relative;
+        left: 0 !important;
+    }
+    
+    .p1, .p2, .p3, .p4, .p5, .p6, .p7, .p8, .p9, .p10, .p11, .p12 {
+        position: relative;
+        left: 0 !important;
+        top: auto !important;
+    }
+    
+    .circle1, .circle2, .circle3 {
+        position: relative;
+        top: auto !important;
+    }
+    
+    .loc, .give {
+        position: relative;
+        top: auto !important;
+        margin-left: 0;
+    }
+    
+    .conteineri2 {
+        height: auto;
+        padding: 30px 20px 50px;
+        position: relative;
+        top: auto;
+        left: 0;
+    }
+    
+    .input1, .input2, .input3, .btn-sub {
+        width: 90% !important;
+        left: 5% !important;
+        position: relative;
+        top: auto !important;
+        margin-bottom: 15px;
+    }
+    
+    .p14 {
+        margin-left: 0;
+        text-align: center;
+        width: 100%;
+        font-size: 36px;
+    }
+    
+    .p15 {
+        width: 90%;
+        left: 5%;
+        position: relative;
+        top: auto;
+    }
+}
+
+@media (max-width: 992px) {
+    .navbar {
+        height: auto;
+    }
+    
+    .nav-menu {
+        gap: 15px;
+    }
+    
+    .nav-link {
+        font-size: 12px;
+    }
+    
+    .hero {
+        height: 350px;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .conteineri1 {
+        width: 100%;
+        left: 0;
+    }
+    
+    .conteineri2 {
+        width: 100%;
+        left: 0;
+    }
+    
+    .footer-content {
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+    
+    .footer-box h3 {
+        font-size: 36px;
+        line-height: 44px;
+    }
+    
+    .img-box {
+        display: none;
+    }
+    
+    .footer {
+        margin-top: 100px;
+        padding: 60px 20px;
+    }
 }
