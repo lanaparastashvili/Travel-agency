@@ -765,164 +765,300 @@ body {
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
 }
+/* MEDIA QUERIES */
+
+/* Tablet and Medium Screens */
 @media (max-width: 1024px) {
-    .navbar {
-        width: 100%;
-        height: 70px;
-    }
+  .navbar {
+    width: 100%;
+    height: 70px;
+  }
 
-    .nav-menu {
-        gap: 30px;
-    }
+  .nav-menu {
+    gap: 30px;
+  }
 
-    .hero-images {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .hero {
+    margin-top: 70px;
+  }
 
-    .hero-images img {
-        width: 100%;
-        height: 300px;
-    }
+  .hero-images {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-    .location-info h1 {
-        font-size: 28px;
-        margin-left: 50px;
-    }
+  .hero-images img {
+    width: 100%;
+    height: 300px;
+  }
 
-    .location-info p {
-        margin-left: 50px;
-    }
+  .header-container {
+    flex-direction: column;
+    padding: 30px 40px;
+    gap: 30px;
+    text-align: center;
+  }
 
-    .main-content {
-        gap: 30px;
-    }
+  .header-left {
+    width: 100%;
+    text-align: center;
+  }
 
-    .sidebar {
-        width: 280px;
-    }
+  .destination-name {
+    margin-left: 0;
+  }
 
-    .packages-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .destination-country {
+    margin-left: 0;
+    justify-content: center;
+  }
 
-    .footer {
-        padding: 100px 40px;
-    }
+  .header-right {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+  }
 
-    .footer-box h3 {
-        font-size: 40px;
-        line-height: 50px;
-    }
+  .stat {
+    margin-right: 0;
+  }
+
+  .main-content {
+    flex-direction: row;
+    gap: 30px;
+    padding: 30px 20px;
+  }
+
+  .left-column {
+    flex: 1;
+  }
+
+  .sidebar {
+    width: 280px;
+    position: static;
+  }
+
+  .price-card {
+    width: 100%;
+    position: static;
+    top: auto;
+    left: auto;
+  }
+
+  .price-card .price {
+    position: static;
+    font-size: 32px;
+  }
+
+  .para1 {
+    position: static;
+  }
+
+  .checklist-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .footer {
+    padding: 100px 40px;
+  }
+
+  .footer-box h3 {
+    font-size: 40px;
+    line-height: 50px;
+  }
+
+  .footer-content {
+    flex-direction: row;
+  }
 }
 
+/* Mobile Screens */
 @media (max-width: 768px) {
-    .navbar {
-        width: 100%;
-        padding: 15px 20px;
-        height: auto;
-    }
+  .navbar {
+    width: 100%;
+    padding: 15px 20px;
+    height: auto;
+  }
 
-    .nav-menu {
-        display: none;
-    }
+  .nav-contect {
+    padding: 0 15px;
+  }
 
-    .btn-menu {
-        display: block;
-    }
+  .nav-menu {
+    display: none;
+  }
 
-    .hero {
-        margin-top: 60px;
-        padding: 15px;
-    }
+  .btn-menu {
+    display: block;
+  }
 
-    .hero-images {
-        grid-template-columns: 1fr;
-        gap: 10px;
-    }
+  .hero {
+    margin-top: 60px;
+    padding: 15px;
+  }
 
-    .hero-images img {
-        width: 100%;
-        height: 250px;
-    }
+  .hero-images {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
 
-    .location-header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 20px;
-        gap: 15px;
-    }
+  .hero-images img {
+    width: 100%;
+    height: 250px;
+  }
 
-    .location-info h1 {
-        font-size: 24px;
-        margin-left: 0;
-    }
+  .header-container {
+    flex-direction: column;
+    padding: 24px 20px;
+    gap: 20px;
+    text-align: center;
+  }
 
-    .location-info p {
-        margin-left: 0;
-    }
+  .header-left {
+    width: 100%;
+    align-items: center;
+  }
 
-    .location-tabs {
-        width: 100%;
-        gap: 15px;
-        flex-wrap: wrap;
-    }
+  .destination-name {
+    font-size: 24px;
+    margin-left: 0;
+    text-align: center;
+  }
 
-    .main-content {
-        flex-direction: column;
-        padding: 20px;
-        gap: 20px;
-    }
+  .destination-country {
+    margin-left: 0;
+    justify-content: center;
+    font-size: 13px;
+  }
 
-    .sidebar {
-        width: 100%;
-    }
+  .header-right {
+    width: 100%;
+    flex-direction: column;
+    gap: 20px;
+    align-items: stretch;
+  }
 
-    .price-card {
-        position: static;
-    }
+  .stat {
+    margin-right: 0;
+    justify-content: center;
+  }
 
-    .section {
-        padding: 20px;
-    }
+  .main-content {
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
 
-    .checklist-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
+  .left-column {
+    width: 100%;
+  }
 
-    .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-    }
+  .sidebar {
+    width: 100%;
+    position: static;
+  }
 
-    .packages-grid {
-        grid-template-columns: 1fr;
-    }
+  .price-card {
+    width: 100%;
+    position: static;
+    top: auto;
+    left: auto;
+  }
 
-    .packages h2 {
-        font-size: 22px;
-    }
+  .price-card .price {
+    position: static;
+    font-size: 28px;
+  }
 
-    .footer {
-        margin-top: 100px;
-        padding: 60px 20px;
-    }
+  .para1 {
+    position: static;
+  }
 
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
-    }
+  .section {
+    padding: 20px;
+  }
 
-    .footer-box h3 {
-        font-size: 32px;
-        line-height: 40px;
-    }
+  .section h2 {
+    font-size: 18px;
+  }
 
-    .footer-box h4 {
-        margin-top: 15px;
-    }
+  .checklist-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
 
-    .email-btn {
-        width: 100%;
-    }
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .gallery-grid img {
+    height: 150px;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 15px;
+  }
+
+  .card {
+    margin-bottom: 10px;
+  }
+
+  .card-image {
+    height: 200px;
+  }
+
+  .header h1 {
+    font-size: 36px;
+  }
+
+  .check-all {
+    font-size: 16px;
+  }
+
+  .destination-title {
+    font-size: 20px;
+  }
+
+  .footer {
+    margin-top: 100px;
+    padding: 60px 20px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-box h3 {
+    font-size: 32px;
+    line-height: 40px;
+    margin-bottom: 20px;
+  }
+
+  .footer-box h4 {
+    font-size: 18px;
+    margin-top: 15px;
+  }
+
+  .footer-box p {
+    font-size: 14px;
+    line-height: 30px;
+  }
+
+  .email-btn {
+    width: 100%;
+    margin: 15px 0;
+  }
 }
