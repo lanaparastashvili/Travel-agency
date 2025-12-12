@@ -47,15 +47,46 @@ document.addEventListener('DOMContentLoaded', function () {
     var checkboxes = document.querySelectorAll('input[type="checkbox"]');
        var searchBtn = document.querySelector('.btn-login');
 
-        if (searchBtn) {
+   if (searchBtn) {
+        localStorage.setItem("packages", JSON.stringify([
+    { id: 1, name: "Paris Trip", price: 2000 },
+    { id: 2, name: "London Tour", price: 1800 },
+    { id: 3, name: "New York Adventure", price: 2500 }
+]));
+     
+    }
+    localStorage.setItem("packages", JSON.stringify([
+    { id: 1, name: "Paris Trip", price: 2000 },
+    { id: 2, name: "London Tour", price: 1800 },
+    { id: 3, name: "New York Adventure", price: 2500 }
+]));
+ if (searchBtn) {
         searchBtn.addEventListener('click', function () {
             var searchTerm = prompt('Search for:');
             if (searchTerm) {
                 sessionStorage.setItem('searchTerm', searchTerm);
-                alert('Searching for: ' + searchTerm);
+
+                var packages = JSON.parse(localStorage.getItem('packages')) || [];
+                
+                var results = packages.filter(function(pkg) {
+                    return pkg.name.toLowerCase().includes(searchTerm.toLowerCase());
+                });
+
+                if (results.length > 0) {
+                    var message = "Search results:\n";
+                    results.forEach(function(pkg) {
+                        message += pkg.name + " - $" + pkg.price + "\n";
+                    });
+                    alert(message);
+                } else {
+                    alert("No packages found for: " + searchTerm);
+                }
             }
         });
     }
+
+
+  
     if (priceSlider && priceDisplay) {
         priceSlider.addEventListener('input', function () {
             maxPrice = this.value;
@@ -91,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
- 
+
     heartButtons.forEach(function (btn) {
         if (btn.textContent.includes('❤')) {
             btn.addEventListener('click', function () {
