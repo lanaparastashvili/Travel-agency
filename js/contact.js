@@ -1,7 +1,39 @@
 
 var pageName = "Contact Us";
 var formSubmitted = false;
+document.addEventListener('DOMContentLoaded', function () {
+    console.log(pageName + " - Ready!");
 
+    var menuBtn = document.querySelector('.btn-menu');
+    var navMenu = document.querySelector('.nav-menu');
+
+    if (menuBtn && navMenu) {
+        menuBtn.style.cursor = 'pointer';
+
+        menuBtn.addEventListener('click', function () {
+            navMenu.classList.toggle('active');
+            menuBtn.classList.toggle('open');
+        });
+
+        var navLinks = navMenu.querySelectorAll('.nav-link');
+        navLinks.forEach(function (link) {
+            link.addEventListener('click', function () {
+                navMenu.classList.remove('active');
+                menuBtn.classList.remove('open');
+            });
+        });
+
+        document.addEventListener('click', function (event) {
+            var isClickInsideMenu = navMenu.contains(event.target);
+            var isClickOnButton = menuBtn.contains(event.target);
+
+            if (!isClickInsideMenu && !isClickOnButton) {
+                navMenu.classList.remove('active');
+                menuBtn.classList.remove('open');
+            }
+        });
+    }
+});
 
 document.addEventListener('DOMContentLoaded', function() {
     console.log(pageName + " - Ready!");

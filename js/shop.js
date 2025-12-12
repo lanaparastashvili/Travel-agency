@@ -2,6 +2,40 @@ var shopName = "Travel Agency Shop";
 var cartCount = 0;                       
 var isLoaded = false; 
 
+document.addEventListener('DOMContentLoaded', function () {
+    console.log(shopName + " - Ready!");
+
+    var menuBtn = document.querySelector('.btn-menu');
+    var navMenu = document.querySelector('.nav-menu');
+
+    if (menuBtn && navMenu) {
+        menuBtn.style.cursor = 'pointer';
+
+        menuBtn.addEventListener('click', function () {
+            navMenu.classList.toggle('active');
+            menuBtn.classList.toggle('open');
+        });
+
+        var navLinks = navMenu.querySelectorAll('.nav-link');
+        navLinks.forEach(function (link) {
+            link.addEventListener('click', function () {
+                navMenu.classList.remove('active');
+                menuBtn.classList.remove('open');
+            });
+        });
+
+        document.addEventListener('click', function (event) {
+            var isClickInsideMenu = navMenu.contains(event.target);
+            var isClickOnButton = menuBtn.contains(event.target);
+
+            if (!isClickInsideMenu && !isClickOnButton) {
+                navMenu.classList.remove('active');
+                menuBtn.classList.remove('open');
+            }
+        });
+    }});
+
+
 function calculateTotal(price, quantity) {
     return price * quantity; }
 
@@ -14,6 +48,7 @@ function calculateTotal(price, quantity) {
         return cartCount + " items in cart";
     }
 }
+
 document.addEventListener('DOMContentLoaded', function () {
     isLoaded = true;
     console.log(shopName + " - Ready!");

@@ -126,17 +126,99 @@ body {
 }
 
 .btn-menu {
-    position: relative;
-    top: 5px;
-    left: 1.25px;
-    width: 17.8px;
-    height: 20px;
-    background-image: url("../assets/common/menu.png");
-    background-size: cover;
-    display: inline-block;
-    border: none;
+  position: relative;
+  top: 5px;
+  left: 1.25px;
+  width: 17.8px;
+  height: 20px;
+  background-image: url("../assets/common/menu.png");
+  background-size: cover;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+}
 
+.nav-menu.active {
+  display: flex !important;
+  flex-direction: column;
+  position: absolute;
+  top: 80px;
+  right: 0;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fffe 100%);
+  border: none;
+  border-bottom: 3px solid #1bbc9b;
+  padding: 35px 25px;
+  box-shadow: 0 12px 35px rgba(27, 188, 155, 0.15);
+  gap: 8px;
+  z-index: 999;
+  animation: slideDown 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  backdrop-filter: blur(10px);
+}
 
+.nav-menu.active::before {
+  content: "NAVIGATION";
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #1bbc9b;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.nav-menu.active .nav-link {
+  padding: 14px 18px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-size: 15px;
+  font-weight: 500;
+  color: #2d3748;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-menu.active .nav-link::before {
+  content: "→";
+  position: absolute;
+  left: 12px;
+  opacity: 0;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  color: #1bbc9b;
+}
+
+.nav-menu.active .nav-link:hover {
+  background: linear-gradient(135deg, #e8f5f0 0%, #f0fffe 100%);
+  color: #1bbc9b;
+}
+
+.nav-menu.active .nav-link:hover::before {
+  opacity: 1;
+}
+
+.nav-menu.active .colon {
+  display: none;
+}
+
+.nav-menu.active::after {
+  content: "Explore our best travel packages";
+  display: block;
+  font-size: 12px;
+  color: #999;
+  text-align: center;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #e8e8e8;
+  font-style: italic;
+}
+
+.btn-menu.open {
+  opacity: 0.5;
+  transform: scale(1.15);
 }
 
 .btn-login {
@@ -635,155 +717,170 @@ body {
 
 
 }
+
+
+
 @media (max-width: 1400px) {
+   
     .navbar {
         width: 100%;
     }
-    
-    .conteineri1 {
-        width: calc(100% - 40px);
-        left: 20px;
-        position: relative;
-    }
-    
+
+  
+    .conteineri1,
     .conteineri2 {
-        width: calc(100% - 40px);
-        left: 20px;
+        width: 100%;
+        margin-left: 0;
+        left: 0;
+        top: auto; 
         position: relative;
+        padding: 20px;
     }
-    
+
+
     .one, .two {
         position: relative;
         top: auto;
         left: auto;
-        margin: 10px 5px;
+        margin: 10px 5px; 
     }
 }
 
 @media (max-width: 1200px) {
     .navbar {
-        width: 100%;
         padding: 15px 20px;
     }
-    
+
     .nav-menu {
         gap: 20px;
     }
-    
+
     .conteineri1 {
         display: flex;
-        flex-direction: column;
+        flex-direction: column; 
         height: auto;
         padding: 20px;
-        width: 100%;
-        left: 0;
-        position: relative;
-        top: auto;
     }
-    
+
     .conc1, .conc2, .conc3 {
         width: 100%;
         height: auto;
-        padding: 20px;
+        padding: 20px 0; 
         position: relative;
-        left: 0 !important;
+        left: 0;
+        margin-bottom: 20px; 
     }
-    
-    .p1, .p2, .p3, .p4, .p5, .p6, .p7, .p8, .p9, .p10, .p11, .p12 {
-        position: relative;
-        left: 0 !important;
-        top: auto !important;
-    }
-    
+  
     .circle1, .circle2, .circle3 {
-        position: relative;
-        top: auto !important;
+        position: static; 
+        margin-bottom: 10px;
     }
     
     .loc, .give {
-        position: relative;
-        top: auto !important;
+        position: static;
         margin-left: 0;
+        width: auto;
+        height: auto;
+        top: auto;
+        margin-bottom: 10px;
+    }
+
+    .p1, .p2, .p3, .p4, .p5, .p6, .p7, .p8, .p9, .p10, .p11, .p12 {
+        position: static;
+        left: auto;
+        top: auto;
+        margin-left: 0;
+        width: 100%;
     }
     
     .conteineri2 {
         height: auto;
         padding: 30px 20px 50px;
-        position: relative;
-        top: auto;
-        left: 0;
-    }
-    
-    .input1, .input2, .input3, .btn-sub {
-        width: 90% !important;
-        left: 5% !important;
-        position: relative;
-        top: auto !important;
-        margin-bottom: 15px;
     }
     
     .p14 {
         margin-left: 0;
         text-align: center;
         width: 100%;
-        font-size: 36px;
+        font-size: 40px; 
     }
     
     .p15 {
-        width: 90%;
-        left: 5%;
-        position: relative;
-        top: auto;
+        width: 100%; 
+        left: auto;
+        position: static;
+        margin: 15px auto 30px; 
+    }
+
+
+    .input1, .input2, .input3, .btn-sub {
+        width: 100%; 
+        left: 0;
+        position: static;
+        margin: 0 auto 15px; 
     }
 }
 
-@media (max-width: 992px) {
-    .navbar {
-        height: auto;
-    }
-    
+@media (max-width: 768px) {
     .nav-menu {
-        gap: 15px;
-    }
-    
-    .nav-link {
-        font-size: 12px;
+        display: none; 
     }
     
     .hero {
-        height: 350px;
+        height: 300px; 
     }
     
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
-    
-    .conteineri1 {
-        width: 100%;
-        left: 0;
+
+    .p14 {
+        font-size: 30px;
+        line-height: 1.2;
     }
-    
-    .conteineri2 {
-        width: 100%;
-        left: 0;
+
+    .p13 {
+        font-size: 24px;
+        line-height: 1.2;
     }
     
     .footer-content {
-        flex-wrap: wrap;
-        gap: 30px;
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
     }
     
-    .footer-box h3 {
-        font-size: 36px;
-        line-height: 44px;
+    .footer-box {
+        width: 100%;
+    }
+
+    .footer-box h3, .footer-box h4 {
+        text-align: center;
     }
     
+    .footer-box p {
+        text-align: center;
+        line-height: 1.5;
+    }
+
+    .email-btn {
+        margin: 15px auto;
+        display: block;}
     .img-box {
         display: none;
     }
     
     .footer {
-        margin-top: 100px;
-        padding: 60px 20px;
+        margin-top: 50px; 
+        padding: 40px 15px;
+    }
+
+    .nav-buttons {
+        gap: 10px;
+    }
+
+    .btn-login {
+        padding: 8px 15px;
+        font-size: 14px;
     }
 }

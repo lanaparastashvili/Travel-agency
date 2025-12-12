@@ -3,6 +3,56 @@ var basePrice = 50;
 var isPageLoaded = false;                          
 var selectedPackage = null;                        
 var userEmail; 
+document.addEventListener('DOMContentLoaded', function () {
+    console.log(pricingCards + " - Ready!");
+
+    var menuBtn = document.querySelector('.btn-menu');
+    var navMenu = document.querySelector('.nav-menu');
+
+    if (menuBtn && navMenu) {
+        menuBtn.style.cursor = 'pointer';
+
+        menuBtn.addEventListener('click', function () {
+            navMenu.classList.toggle('active');
+            menuBtn.classList.toggle('open');
+        });
+
+        var navLinks = navMenu.querySelectorAll('.nav-link');
+        navLinks.forEach(function (link) {
+            link.addEventListener('click', function () {
+                navMenu.classList.remove('active');
+                menuBtn.classList.remove('open');
+            });
+        });
+
+        document.addEventListener('click', function (event) {
+            var isClickInsideMenu = navMenu.contains(event.target);
+            var isClickOnButton = menuBtn.contains(event.target);
+
+            if (!isClickInsideMenu && !isClickOnButton) {
+                navMenu.classList.remove('active');
+                menuBtn.classList.remove('open');
+            }
+        });
+    }});
+var bookBtn = document.querySelector('.book-btn');
+    var detailBtns = document.querySelectorAll('.btn-details');
+    var emailBtn = document.querySelector('.email-btn');
+    var galleryImages = document.querySelectorAll('.gallery-grid img');
+    var itineraryItems = document.querySelectorAll('.itinerary-item');
+    var searchBtn = document.querySelector('.btn-login');
+    
+
+ 
+        if (searchBtn) {
+        searchBtn.addEventListener('click', function () {
+            var searchTerm = prompt('Search for:');
+            if (searchTerm) {
+                sessionStorage.setItem('searchTerm', searchTerm);
+                alert('Searching for: ' + searchTerm);
+            }
+        });
+    }
 
 function calculateDiscount(price, percent) {
     return price - (price * percent / 100);        
