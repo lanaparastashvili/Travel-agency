@@ -55,11 +55,6 @@ document.addEventListener('DOMContentLoaded', function () {
 ]));
      
     }
-    localStorage.setItem("packages", JSON.stringify([
-    { id: 1, name: "Paris Trip", price: 2000 },
-    { id: 2, name: "London Tour", price: 1800 },
-    { id: 3, name: "New York Adventure", price: 2500 }
-]));
  if (searchBtn) {
         searchBtn.addEventListener('click', function () {
             var searchTerm = prompt('Search for:');
@@ -183,24 +178,95 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     if (emailBtn) {
-        emailBtn.addEventListener('click', function () {
-            var email = prompt('Enter your email:');
-            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    emailBtn.addEventListener('click', function () {
 
-            if (email && emailPattern.test(email)) {
-                localStorage.setItem('subscriberEmail', email);
-                alert('Subscribed: ' + email);
-            } else if (email) {
-                alert('Invalid email format');
-            }
-        });
-    }
 
-    var savedFilters = sessionStorage.getItem('filters');
-    if (savedFilters) {
-        selectedFilters = JSON.parse(savedFilters);
-        console.log('Loaded filters:', selectedFilters);
+        var email = prompt('Please enter your email:');
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!email) {
+            alert('Email is required.');
+            return;
+        }
+
+        if (!emailPattern.test(email)) {
+            alert('Invalid email format');
+            return;
+        }
+
+        var confirmSub = prompt('Do you want to subscribe? (yes/no)').toLowerCase();
+
+        if (confirmSub === 'yes') {
+            localStorage.setItem('subscriberEmail', email);
+            alert('Subscribed: ' + email);
+        } else if (confirmSub === 'no') {
+            alert('Subscription cancelled.');
+        } else {
+            alert('Invalid response.');
+        }
+    });
+}
+
+
+var lastBooking = localStorage.getItem('lastBooking');
+if (lastBooking) {
+    var data = JSON.parse(lastBooking);
+    console.log('Last booking:', data.destination, '- $' + data.total);
+}
+
+
+function toggleItem(element) {
+    var body = element.querySelector('.itinerary-body');
+    if (body) {
+        body.style.display = (body.style.display === 'block') ? 'none' : 'block';
     }
+}
 });
+
+    if (emailBtn) {
+    emailBtn.addEventListener('click', function () {
+
+
+        var email = prompt('Please enter your email:');
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!email) {
+            alert('Email is required.');
+            return;
+        }
+
+        if (!emailPattern.test(email)) {
+            alert('Invalid email format');
+            return;
+        }
+
+        var confirmSub = prompt('Do you want to subscribe? (yes/no)').toLowerCase();
+
+        if (confirmSub === 'yes') {
+            localStorage.setItem('subscriberEmail', email);
+            alert('Subscribed: ' + email);
+        } else if (confirmSub === 'no') {
+            alert('Subscription cancelled.');
+        } else {
+            alert('Invalid response.');
+        }
+    });
+}
+
+
+var lastBooking = localStorage.getItem('lastBooking');
+if (lastBooking) {
+    var data = JSON.parse(lastBooking);
+    console.log('Last booking:', data.destination, '- $' + data.total);
+}
+
+
+function toggleItem(element) {
+    var body = element.querySelector('.itinerary-body');
+    if (body) {
+        body.style.display = (body.style.display === 'block') ? 'none' : 'block';
+    }
+}
+
 
 console.log('--- Packages Page Ready ---');

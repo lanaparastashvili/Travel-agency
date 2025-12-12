@@ -1,14 +1,26 @@
-var siteName = "Travel Agency";                   
-var basePrice = 50;                                
-var isPageLoaded = false;                          
-var selectedPackage = null;                        
-var userEmail; 
+var siteName = "Travel Agency";
+var basePrice = 50;
+var isPageLoaded = false;
+var selectedPackage = null;
+var userEmail;
+
 document.addEventListener('DOMContentLoaded', function () {
-    console.log(pricingCards + " - Ready!");
+
+    console.log(siteName + " - Ready!");
 
     var menuBtn = document.querySelector('.btn-menu');
     var navMenu = document.querySelector('.nav-menu');
+    var searchBtn = document.querySelector('.btn-login');
+    var emailBtn = document.querySelector('.email-btn');
+    var pricingCards = document.querySelectorAll('.pricing-card, .pricing-card2, .pricing-card3');
+    var cardButtons = document.querySelectorAll('.bt-card, .bt-card2, .bt-card3');
+    var tripItems = document.querySelectorAll('.trip-item');
+    var itineraryItems = document.querySelectorAll('.itinerary-item');
 
+    isPageLoaded = true;
+
+
+ 
     if (menuBtn && navMenu) {
         menuBtn.style.cursor = 'pointer';
 
@@ -17,115 +29,74 @@ document.addEventListener('DOMContentLoaded', function () {
             menuBtn.classList.toggle('open');
         });
 
-        var navLinks = navMenu.querySelectorAll('.nav-link');
-        navLinks.forEach(function (link) {
-            link.addEventListener('click', function () {
-                navMenu.classList.remove('active');
-                menuBtn.classList.remove('open');
-            });
-        });
-
         document.addEventListener('click', function (event) {
-            var isClickInsideMenu = navMenu.contains(event.target);
-            var isClickOnButton = menuBtn.contains(event.target);
-
-            if (!isClickInsideMenu && !isClickOnButton) {
+            var inside = navMenu.contains(event.target);
+            var button = menuBtn.contains(event.target);
+            if (!inside && !button) {
                 navMenu.classList.remove('active');
                 menuBtn.classList.remove('open');
             }
         });
-    }});
-var bookBtn = document.querySelector('.book-btn');
-    var detailBtns = document.querySelectorAll('.btn-details');
-    var emailBtn = document.querySelector('.email-btn');
-    var galleryImages = document.querySelectorAll('.gallery-grid img');
-    var itineraryItems = document.querySelectorAll('.itinerary-item');
-    var searchBtn = document.querySelector('.btn-login');
-    
-
- if (searchBtn) {
-        localStorage.setItem("packages", JSON.stringify([
-    { id: 1, name: "Paris Trip", price: 2000 },
-    { id: 2, name: "London Tour", price: 1800 },
-    { id: 3, name: "New York Adventure", price: 2500 }
-]));
-     
     }
-    localStorage.setItem("packages", JSON.stringify([
-    { id: 1, name: "Paris Trip", price: 2000 },
-    { id: 2, name: "London Tour", price: 1800 },
-    { id: 3, name: "New York Adventure", price: 2500 }
-]));
- if (searchBtn) {
+
+
+    if (searchBtn) {
+
+        localStorage.setItem("packages", JSON.stringify([
+            { id: 1, name: "Paris Trip", price: 2000 },
+            { id: 2, name: "London Tour", price: 1800 },
+            { id: 3, name: "New York Adventure", price: 2500 }
+        ]));
+
         searchBtn.addEventListener('click', function () {
             var searchTerm = prompt('Search for:');
-            if (searchTerm) {
-                sessionStorage.setItem('searchTerm', searchTerm);
+            if (!searchTerm) return;
 
-                var packages = JSON.parse(localStorage.getItem('packages')) || [];
-                
-                var results = packages.filter(function(pkg) {
-                    return pkg.name.toLowerCase().includes(searchTerm.toLowerCase());
+            sessionStorage.setItem('searchTerm', searchTerm);
+
+            var packages = JSON.parse(localStorage.getItem('packages')) || [];
+
+            var results = packages.filter(function (pkg) {
+                return pkg.name.toLowerCase().includes(searchTerm.toLowerCase());
+            });
+
+            if (results.length > 0) {
+                var message = "Search results:\n";
+                results.forEach(function (pkg) {
+                    message += pkg.name + " - $" + pkg.price + "\n";
                 });
-
-                if (results.length > 0) {
-                    var message = "Search results:\n";
-                    results.forEach(function(pkg) {
-                        message += pkg.name + " - $" + pkg.price + "\n";
-                    });
-                    alert(message);
-                } else {
-                    alert("No packages found for: " + searchTerm);
-                }
+                alert(message);
+            } else {
+                alert("No packages found for: " + searchTerm);
             }
         });
     }
 
 
-function calculateDiscount(price, percent) {
-    return price - (price * percent / 100);        
-}
 
-function formatPrice(amount) {
-    return "$" + amount.toFixed(2);
-}
-
-function getDiscountMessage(price) {
-    if (price > 600) {
-        return "Premium package - 15% discount!";
-    } else if (price > 400) {
-        return "Standard package - 10% discount!";
-    } else {
-        return "Budget friendly!";
-    }
-}
-document.addEventListener<'DOMContentLoaded', function () {
-    isPageLoaded = true;
-    console.log(siteName + " - Page loaded!")};
-
-
-    var heroTitle = document.querySelector('.hero-title');
-    var pricingCards = document.querySelectorAll('.pricing-card, .pricing-card2, .pricing-card3');
-    var cardButtons = document.querySelectorAll('.bt-card, .bt-card2, .bt-card3');
-    var tripItems = document.querySelectorAll('.trip-item');
-    var searchBtn = document.querySelector('.btn-login');
-    var emailBtn = document.querySelector('.email-btn');
-
-if (searchButton) {
-        searchButton.addEventListener('click', function () {
-            var searchTerm = prompt('Search for a product:');
-
-            if (searchTerm) {
-                searchProducts(searchTerm);
-            }
-        });
-    }
-  
     cardButtons.forEach(function (btn) {
-        btn.addEventListener('click', handleCardClick);
+        btn.addEventListener('click', function (event) {
+            var card = event.target.closest('.pricing-card, .pricing-card2, .pricing-card3');
+            var titleEl = card.querySelector('.card-t, .card-t2, .card-t3');
+            var priceEl = card.querySelector('.price, .price2, .price3');
+
+            if (titleEl && priceEl) {
+                selectedPackage = {
+                    name: titleEl.textContent,
+                    price: priceEl.textContent,
+                    selectedAt: new Date().toISOString()
+                };
+
+                localStorage.setItem('selectedPackage', JSON.stringify(selectedPackage));
+
+                alert('Added to cart: ' + selectedPackage.name + ' - ' + selectedPackage.price);
+            }
+        });
     });
 
-    pricingCards.forEach(function (card, index) {
+
+ 
+    pricingCards.forEach(function (card) {
         card.style.transition = 'transform 0.3s, box-shadow 0.3s';
 
         card.addEventListener('mouseenter', function () {
@@ -139,12 +110,14 @@ if (searchButton) {
         });
     });
 
-     tripItems.forEach(function (item) {
+
+
+    tripItems.forEach(function (item) {
         item.style.cursor = 'pointer';
+
         item.addEventListener('click', function () {
             var tripName = this.querySelector('span').textContent;
             var tripPrice = this.querySelector('.trip-price').textContent;
-
 
             sessionStorage.setItem('selectedTrip', tripName);
             sessionStorage.setItem('selectedPrice', tripPrice);
@@ -152,70 +125,105 @@ if (searchButton) {
             alert('Selected: ' + tripName + ' - ' + tripPrice);
         });
     });
-     if (emailBtn) {
+
+
+
+    if (emailBtn) {
         emailBtn.addEventListener('click', function () {
-            userEmail = prompt('Enter your email:');
+
+            var email = prompt('Please enter your email:');
             var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-            if (userEmail && emailPattern.test(userEmail)) {
-               
-                localStorage.setItem('userEmail', userEmail);
-                alert('Email saved: ' + userEmail);
-            } else if (userEmail) {
-                alert('Invalid email format!');
+            if (!email) {
+                alert('Email is required.');
+                return;
+            }
+
+            if (!emailPattern.test(email)) {
+                alert('Invalid email format');
+                return;
+            }
+
+            var confirmSub = prompt('Do you want to subscribe? (yes/no)').toLowerCase();
+
+            if (confirmSub === 'yes') {
+                localStorage.setItem('subscriberEmail', email);
+                alert('Subscribed: ' + email);
+            } else if (confirmSub === 'no') {
+                alert('Subscription cancelled.');
+            } else {
+                alert('Invalid response.');
             }
         });
     }
-     var visits = parseInt(localStorage.getItem('visitCount')) || 0;
+
+
+
+    itineraryItems.forEach(function (item) {
+        item.addEventListener('click', function () {
+            var body = item.querySelector('.itinerary-body');
+            if (body) {
+                body.style.display = body.style.display === 'block' ? 'none' : 'block';
+            }
+        });
+    });
+
+
+    var visits = parseInt(localStorage.getItem('visitCount')) || 0;
     visits++;
     localStorage.setItem('visitCount', visits.toString());
     console.log('Visit #' + visits);
 
-     fetch('https://jsonplaceholder.typicode.com/posts/1')
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (data) {
-            console.log('API connected:', data.title);
-        })
-        .catch(function (error) {
-            console.log('Offline mode');
-        });
 
-function handleCardClick(event) {
-    var button = event.target;
-    var card = button.closest('.pricing-card, .pricing-card2, .pricing-card3');
-    var titleEl = card.querySelector('.card-t, .card-t2, .card-t3');
-    var priceEl = card.querySelector('.price, .price2, .price3');
+  
+ var allDemosBtn = document.querySelector('.one');
+var purchaseThemeBtn = document.querySelector('.two');
 
-    if (titleEl && priceEl) {
-        var packageName = titleEl.textContent;
-        var packagePrice = priceEl.textContent;
+if (allDemosBtn) {
 
-       
-        selectedPackage = {
-            name: packageName,
-            price: packagePrice,
-            selectedAt: new Date().toISOString()
-        };
+  
+    var demoPackages = [
+        { id: 1, name: "travel insurance", price: 50.00 },
+        { id: 2, name: "medical insurance", price: 65.00 },
+        { id: 3, name: "full coverage", price: 73.00 }
+    ];
 
-       
-        localStorage.setItem('selectedPackage', JSON.stringify(selectedPackage));
+    allDemosBtn.addEventListener('click', function () {
 
-        alert('Added to cart: ' + packageName + ' - ' + packagePrice);
-    }
-}
-f (typeof jQuery !== 'undefined') 
-    $(document).ready(function () {
+     
+        sessionStorage.setItem("demoPackages", JSON.stringify(demoPackages));
 
-        $('button').hover(
-            function () { $(this).css('opacity', '0.9'); },
-            function () { $(this).css('opacity', '1'); }
-        );
+        var packages = JSON.parse(sessionStorage.getItem("demoPackages")) || [];
+
+        if (packages.length > 0) {
+            var message = "Available Demos:\n\n";
+            packages.forEach(function(pkg) {
+                message += pkg.name + " - $" + pkg.price + "\n";
+            });
+            alert(message);
+        } else {
+            alert("No demos available");
+        }
 
     });
+}
 
+if (purchaseThemeBtn) {
+    purchaseThemeBtn.addEventListener('click', function () {
 
-console.log('--- Pricing Page Loaded ---');
+        var product = {
+            name: "Theme Purchase",
+            price: 188,
+            purchasedAt: new Date().toLocaleString()
+        };
 
+        var cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.push(product);
 
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        alert("Theme added to cart: $49");
+    });
+}
+    console.log('--- Pricing Page Loaded ---');
+});

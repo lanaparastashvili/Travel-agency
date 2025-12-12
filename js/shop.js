@@ -212,5 +212,50 @@ function clearCart() {
     console.log('Cart cleared');
 }
 
+    if (emailBtn) {
+    emailBtn.addEventListener('click', function () {
+
+
+        var email = prompt('Please enter your email:');
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!email) {
+            alert('Email is required.');
+            return;
+        }
+
+        if (!emailPattern.test(email)) {
+            alert('Invalid email format');
+            return;
+        }
+
+        var confirmSub = prompt('Do you want to subscribe? (yes/no)').toLowerCase();
+
+        if (confirmSub === 'yes') {
+            localStorage.setItem('subscriberEmail', email);
+            alert('Subscribed: ' + email);
+        } else if (confirmSub === 'no') {
+            alert('Subscription cancelled.');
+        } else {
+            alert('Invalid response.');
+        }
+    });
+}
+
+
+var lastBooking = localStorage.getItem('lastBooking');
+if (lastBooking) {
+    var data = JSON.parse(lastBooking);
+    console.log('Last booking:', data.destination, '- $' + data.total);
+}
+
+
+function toggleItem(element) {
+    var body = element.querySelector('.itinerary-body');
+    if (body) {
+        body.style.display = (body.style.display === 'block') ? 'none' : 'block';
+    }
+}
+
 
 console.log('--- Shop Page Ready ---');
