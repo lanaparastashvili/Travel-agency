@@ -12,8 +12,17 @@ document.addEventListener('DOMContentLoaded', function () {
     var emailBtn = document.querySelector('.email-btn');
     var galleryImages = document.querySelectorAll('.gallery-grid img');
     var itineraryItems = document.querySelectorAll('.itinerary-item');
+    var searchBtn = document.querySelector('.btn-login');
 
-
+        if (searchBtn) {
+        searchBtn.addEventListener('click', function () {
+            var searchTerm = prompt('Search for:');
+            if (searchTerm) {
+                sessionStorage.setItem('searchTerm', searchTerm);
+                alert('Searching for: ' + searchTerm);
+            }
+        });
+    }
     itineraryItems.forEach(function (item) {
         item.addEventListener('click', function () {
             var body = this.querySelector('.itinerary-body');

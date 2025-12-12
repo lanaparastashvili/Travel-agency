@@ -23,7 +23,17 @@ document.addEventListener('DOMContentLoaded', function () {
     var selectButton = document.querySelector('.btn6');
     var emailButton = document.querySelector('.email-btn');
     var searchButton = document.querySelector('.btn-login');
+       var searchBtn = document.querySelector('.btn-login');
 
+        if (searchBtn) {
+        searchBtn.addEventListener('click', function () {
+            var searchTerm = prompt('Search for:');
+            if (searchTerm) {
+                sessionStorage.setItem('searchTerm', searchTerm);
+                alert('Searching for: ' + searchTerm);
+            }
+        });
+    }
  if (searchButton) {
         searchButton.addEventListener('click', function () {
             var searchTerm = prompt('Search for a product:');

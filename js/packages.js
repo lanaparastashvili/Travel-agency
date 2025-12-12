@@ -14,7 +14,17 @@ document.addEventListener('DOMContentLoaded', function () {
     var paginationBtns = document.querySelectorAll('.pagination button');
     var emailBtn = document.querySelector('.email-btn');
     var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+       var searchBtn = document.querySelector('.btn-login');
 
+        if (searchBtn) {
+        searchBtn.addEventListener('click', function () {
+            var searchTerm = prompt('Search for:');
+            if (searchTerm) {
+                sessionStorage.setItem('searchTerm', searchTerm);
+                alert('Searching for: ' + searchTerm);
+            }
+        });
+    }
     if (priceSlider && priceDisplay) {
         priceSlider.addEventListener('input', function () {
             maxPrice = this.value;

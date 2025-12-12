@@ -12,7 +12,17 @@ document.addEventListener('DOMContentLoaded', function() {
     var emailInput = document.querySelector('.input2');
     var messageInput = document.querySelector('.input3');
     var emailBtn = document.querySelector('.email-btn');
-    
+    var searchBtn = document.querySelector('.btn-login');
+
+        if (searchBtn) {
+        searchBtn.addEventListener('click', function () {
+            var searchTerm = prompt('Search for:');
+            if (searchTerm) {
+                sessionStorage.setItem('searchTerm', searchTerm);
+                alert('Searching for: ' + searchTerm);
+            }
+        });
+    }
  
     if (submitBtn) {
         submitBtn.addEventListener('click', function() {
